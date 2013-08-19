@@ -2,7 +2,7 @@
 
 > Runs the PHPDocumentor documentation generator tool.
 
-This build include phpDocumentor version 2.0.0a12, other versions can be specified by the `bin` option 
+This build includes phpDocumentor version 2.0.1, other versions can be specified by the `bin` option 
 
 This plugin runs the command : ```phpdoc -d dir -t target```.
 
@@ -31,8 +31,10 @@ grunt.initConfig({
   phpdocumentor: {
     dist: {
         bin: 'bin/phpdoc',
-        directory : './',
-        target : 'docs'
+        directory: './',
+        target: 'docs',
+        ignore: 'baddir1/*,badfile, ...',
+        template: 'zend'
     }                
   },
 })
@@ -63,4 +65,4 @@ Path where to store the generated output. It will default to a folder named 'doc
 ```grunt phpdocumentor```
 
 ## Release History
-0.3.0 - Including ```phpDocumentor version 2.0.0a12``` on the bin, giving default to all options
+0.1.0 - Including ```phpDocumentor version 2.0.0a12``` on the bin, giving default to all options

@@ -71,12 +71,12 @@ module.exports = function(grunt) {
             target               = options.target     || 'docs',
             directory            = options.directory  || './',
             ignore               = options.ignore     || '',
-            output               = options.output     || 'HTML:frames:default';
+            template             = options.template   || 'default';
 
         phpDocumentorCommand += ' --target='    + target;
         phpDocumentorCommand += ' --directory=' + directory;
         phpDocumentorCommand += ' --ignore='    + ignore;
-        phpDocumentorCommand += ' --output='    + output;
+        phpDocumentorCommand += ' --template='  + template;
         
         grunt.log.write(phpDocumentorCommand);
         
