@@ -70,11 +70,13 @@ module.exports = function(grunt) {
         var phpDocumentorCommand = options.bin        || Path.resolve(__dirname, '..', 'bin', 'phpdoc'),
             target               = options.target     || 'docs',
             directory            = options.directory  || './',
-            ignore               = options.ignore     || '';
+            ignore               = options.ignore     || '',
+            output               = options.output     || 'HTML:frames:default';
 
         phpDocumentorCommand += ' --target='    + target;
         phpDocumentorCommand += ' --directory=' + directory;
         phpDocumentorCommand += ' --ignore='    + ignore;
+        phpDocumentorCommand += ' --output='    + output;
         
         grunt.log.write(phpDocumentorCommand);
         
