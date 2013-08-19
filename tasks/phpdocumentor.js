@@ -73,10 +73,10 @@ module.exports = function(grunt) {
             ignore               = options.ignore     || '',
             template             = options.template   || 'default';
 
-        phpDocumentorCommand += ' --target='    + target;
-        phpDocumentorCommand += ' --directory=' + directory;
-        phpDocumentorCommand += ' --ignore='    + ignore;
-        phpDocumentorCommand += ' --template='  + template;
+        phpDocumentorCommand += ' --target '    + target;
+        phpDocumentorCommand += ' --directory ' + directory;
+        phpDocumentorCommand += ' --ignore '    + ignore;
+        phpDocumentorCommand += ' --template '  + template;
         
         grunt.log.write(phpDocumentorCommand);
         
