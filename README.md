@@ -60,9 +60,22 @@ Default value: `docs`
 
 Path where to store the generated output. It will default to a folder named 'docs' 
 
+#### options.ignore( optional )
+Type: `String`
+Default value: ``
+
+Paths or files to ignore, separated by commas.
+
+#### options.template ( optional )
+Type: `String`
+Default value: `default`
+
+Name of the template to use (you can get a list of them with `phpdoc template:list`)
+
 ### Usage Examples
 
 ```grunt phpdocumentor```
 
 ## Release History
+0.4.0 - Added more parameters and upgraded included phpDocumentor phar to 2.0.1
 0.1.0 - Including ```phpDocumentor version 2.0.0a12``` on the bin, giving default to all options
