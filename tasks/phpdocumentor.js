@@ -10,8 +10,8 @@
 
 module.exports = function(grunt) {
 
-    var ChildProcess = require('child_process'), 
-        Util = require('util'), 
+    var ChildProcess = require('child_process'),
+        Util = require('util'),
         Path = require('path'),
         _ = require('lodash')._;
     
@@ -49,16 +49,16 @@ module.exports = function(grunt) {
         
         // Checks if the provided Phpdocumentor command name is valid
         if(options.command !== undefined &&
-           options.command !== 'help' && 
-           options.command !== 'list' && 
-           options.command !== 'parse' && 
-           options.command !== 'run' && 
+           options.command !== 'help' &&
+           options.command !== 'list' &&
+           options.command !== 'parse' &&
+           options.command !== 'run' &&
            options.command !== 'transform' &&
-           options.command !== 'project:parse' && 
-           options.command !== 'project:run' && 
+           options.command !== 'project:parse' &&
+           options.command !== 'project:run' &&
            options.command !== 'project:transform' &&
-           options.command !== 'template:generate' && 
-           options.command !== 'template:list' && 
+           options.command !== 'template:generate' &&
+           options.command !== 'template:list' &&
            options.command !== 'template:package') {
             
             grunt.log.error(Util.format('Phpdocumentor does not provide any command named \'%s\' !', this.data.command));
@@ -69,10 +69,12 @@ module.exports = function(grunt) {
         // path to the phar file
         var phpDocumentorCommand = options.bin        || Path.resolve(__dirname, '..', 'bin', 'phpdoc'),
             target               = options.target     || 'docs',
-            directory            = options.directory  || './';
+            directory            = options.directory  || './',
+            ignore               = options.ignore     || '';
 
-        phpDocumentorCommand += ' --target=' + target;
+        phpDocumentorCommand += ' --target='    + target;
         phpDocumentorCommand += ' --directory=' + directory;
+        phpDocumentorCommand += ' --ignore='    + ignore;
         
         grunt.log.write(phpDocumentorCommand);
         
